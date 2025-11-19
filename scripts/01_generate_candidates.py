@@ -2,6 +2,7 @@ import json
 import yaml
 import torch
 import argparse
+import os
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from dotenv import load_dotenv
@@ -92,6 +93,10 @@ def main():
         })
         if (idx + 1) % 10 == 0:
             print(f"  ↪ Generated {(idx + 1)} / {len(data)} prompts")
+
+    output_dir = os.path.dirname(args.output_file)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
 
     with open(args.output_file, 'w') as f:
         json.dump(results, f, indent=2)
