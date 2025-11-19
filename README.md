@@ -3,7 +3,7 @@
 A pipeline for **Direct Preference Optimization (DPO)**.
 It uses a trained Reward Model (Judge) to generate synthetic preference data (Chosen vs Rejected) and fine-tunes a base LLM to align with those preferences.
 
-## 🚀 Quick Start
+##  Quick Start
 
 1. **Setup Environment**
    ```bash
@@ -24,13 +24,13 @@ It uses a trained Reward Model (Judge) to generate synthetic preference data (Ch
    bash scripts/run_dpo_pipeline.sh
    ```
 
-## 📊 How it Works
+##  How it Works
 
-1. **Self-Play:** The base model generates 2 responses for every prompt.
-2. **AI Feedback:** The Reward Model scores both. The winner is "Chosen", loser is "Rejected".
-3. **DPO Training:** The model is fine-tuned to maximize the margin between chosen and rejected responses.
+1. The base model generates 2 responses for every prompt.
+2. The Reward Model scores both. The winner is "Chosen", loser is "Rejected".
+3. The model is fine-tuned to maximize the margin between chosen and rejected responses with DPO training.
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```text
 fully-fluent-dpo-trainer/
@@ -69,7 +69,7 @@ fully-fluent-dpo-trainer/
 - High temperature (0.8) for diverse responses
 - Generates 2 candidates per prompt for preference labeling
 
-## 📝 Data Format
+## Data Format
 
 Your `data/prompts.json` should follow this format:
 
@@ -86,7 +86,7 @@ Your `data/prompts.json` should follow this format:
 ]
 ```
 
-## 🎯 Pipeline Steps
+## Pipeline Steps
 
 1. **Generate Candidates** (`01_generate_candidates.py`)
    - Loads base model
@@ -105,6 +105,6 @@ Your `data/prompts.json` should follow this format:
    - Saves adapter to `models/dpo_final/`
 
 
-## 📊 Tracking
+##  Tracking
 
 The pipeline supports Weights & Biases integration. Set your API key in `.env` to enable experiment tracking.
