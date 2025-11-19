@@ -26,7 +26,7 @@ It uses a trained Reward Model (Judge) to generate synthetic preference data (Ch
 
 ## 📊 How it Works
 
-1. **Self-Play:** The base model (SmolLM2-1.7B) generates 2 responses for every prompt.
+1. **Self-Play:** The base model generates 2 responses for every prompt.
 2. **AI Feedback:** The Reward Model scores both. The winner is "Chosen", loser is "Rejected".
 3. **DPO Training:** The model is fine-tuned to maximize the margin between chosen and rejected responses.
 
@@ -104,11 +104,6 @@ Your `data/prompts.json` should follow this format:
    - Uses LoRA for parameter-efficient training
    - Saves adapter to `models/dpo_final/`
 
-## 🚨 Important Notes
-
-- **Do not commit proprietary data**: All data files are gitignored
-- **GPU Requirements**: 24GB+ VRAM recommended (uses 4-bit quantization)
-- **Reward Model**: Must be trained separately (see `fully-fluent-reward-model` repo)
 
 ## 📊 Tracking
 
