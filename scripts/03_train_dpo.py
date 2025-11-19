@@ -28,12 +28,19 @@ def main():
     )
 
     # 2. Load Base Model
-    print(f"Loading base model: {cfg['model']['base_model_name']}")
+    # CRITICAL FIX: robust attention implementation logic
+    # Prioritize explicit config string -> Fallback to boolean -> Default to eager
+    attn_impl = cfg['model'].get('attn_implementation')
+    if attn_impl is None:
+        attn_impl = "flash_attention_2" if cfg['model'].get('use_flash_attention') else "eager"
+
+    print(f"Loading base model: {cfg['model']['base_model_name']} (Attention: {attn_impl})")
+    
     model = AutoModelForCausalLM.from_pretrained(
         cfg['model']['base_model_name'],
         quantization_config=bnb_config if cfg['model']['load_in_4bit'] else None,
         device_map="auto",
-        attn_implementation="flash_attention_2" if cfg['model']['use_flash_attention'] else "eager"
+        attn_implementation=attn_impl
     )
     print("✓ Base model ready")
 
