@@ -1,0 +1,14 @@
+[
+  {
+    "context": "Student: Hi, I'm learning Spanish.\nTutor: Great! What would you like to practice today?",
+    "student_message": "Can you explain the difference between Ser and Estar?"
+  },
+  {
+    "context": "Student: I'm confused about conjugations.\nTutor: No problem, let's work through it together.",
+    "student_message": "How do I conjugate 'hablar' in the present tense?"
+  },
+  {
+    "context": "Student: I made a mistake in my last sentence.",
+    "student_message": "Should I have used 'por' or 'para' in that context?"
+  }
+]

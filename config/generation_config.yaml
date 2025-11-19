@@ -1,0 +1,7 @@
+temperature: 0.8
+top_p: 0.95
+top_k: 50
+max_new_tokens: 300
+do_sample: true
+repetition_penalty: 1.05
+num_return_sequences: 2  # We need pairs (Candidate A vs Candidate B)

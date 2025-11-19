@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+venv/
+models/reward/
+models/dpo_final/
+outputs/
+data/processed/
+data/prompts.json
+wandb/
