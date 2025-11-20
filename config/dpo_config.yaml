@@ -6,14 +6,14 @@ model:
 training:
   output_dir: "outputs/checkpoints"
   num_train_epochs: 1
-  per_device_train_batch_size: 1  # Increase if you have more VRAM
-  gradient_accumulation_steps: 8  # Effective batch size = 1 * 8 = 8
-  learning_rate: 5.0e-7           # Low LR is critical for DPO on Instruct models
+  per_device_train_batch_size: 1  
+  gradient_accumulation_steps: 8  
+  learning_rate: 5.0e-6           
   lr_scheduler_type: "cosine"
   warmup_ratio: 0.1
   logging_steps: 10
   save_steps: 100
-  beta: 0.1                       # The DPO penalty strength (0.1 is standard)
+  beta: 0.1                       
   max_length: 2048
   max_prompt_length: 1024
 
