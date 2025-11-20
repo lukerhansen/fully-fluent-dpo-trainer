@@ -59,7 +59,7 @@ fully-fluent-dpo-trainer/
 └── requirements.txt
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### DPO Training (`config/dpo_config.yaml`)
 - Uses 4-bit quantization and LoRA for efficiency
