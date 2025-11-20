@@ -63,11 +63,11 @@ fully-fluent-dpo-trainer/
 
 ### DPO Training (`config/dpo_config.yaml`)
 - Uses 4-bit quantization and LoRA for efficiency
-- Low learning rate (5e-7) for stable fine-tuning
+- Low learning rate (5e-6) for stable fine-tuning
 
 ### Generation (`config/generation_config.yaml`)
 - High temperature (0.8) for diverse responses
-- Generates 2 candidates per prompt for preference labeling
+- Generates 4 candidates per prompt for preference labeling
 
 ## Data Format
 
