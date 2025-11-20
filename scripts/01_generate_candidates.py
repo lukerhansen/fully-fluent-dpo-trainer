@@ -77,7 +77,7 @@ def main():
                 top_p=gen_cfg['top_p'],
                 max_new_tokens=gen_cfg['max_new_tokens'],
                 do_sample=True,
-                num_return_sequences=2,
+                num_return_sequences=4,
                 pad_token_id=tokenizer.eos_token_id
             )
 
