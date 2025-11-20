@@ -26,8 +26,8 @@ It uses a trained Reward Model (Judge) to generate synthetic preference data (Ch
 
 ##  How it Works
 
-1. The base model generates 2 responses for every prompt.
-2. The Reward Model scores both. The winner is "Chosen", loser is "Rejected".
+1. The base model generates 4 responses for every prompt.
+2. The Reward Model scores them. The winner is "Chosen", loser is "Rejected".
 3. The model is fine-tuned to maximize the margin between chosen and rejected responses with DPO training.
 
 ##  Repository Structure
