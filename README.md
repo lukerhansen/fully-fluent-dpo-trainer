@@ -90,7 +90,7 @@ Your `data/prompts.json` should follow this format:
 
 1. **Generate Candidates** (`01_generate_candidates.py`)
    - Loads base model
-   - Generates 2 diverse responses per prompt
+   - Generates 4 diverse responses per prompt
    - Saves to `data/processed/candidates.json`
 
 2. **Label Preferences** (`02_label_preferences.py`)
